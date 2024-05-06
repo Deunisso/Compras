@@ -97,3 +97,13 @@ nav ul li a:hover {
     background-color: #555;
     border-radius: 5px;
 }
+
+@media(max-width: 800px) {
+    .image{
+        width: 180px;}
+}
+    
+@media(max-width: 600px) {
+    .image{
+        width: 140px;}
+}
