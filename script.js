@@ -2,7 +2,7 @@
 
 // Função genérica para listar arquivos dentro de uma pasta
 function listFilesInFolder(folderId, containerId) {
-    const query = `'${folderId}' in parents and (mimeType='image/jpeg' or mimeType='image/png')`;
+    const query = `'${folderId}' in parents and (mimeType='image/jpeg' or mimeType='image/png' or mimeType='image/webp')`;
 
     // Faça uma solicitação para listar arquivos na pasta especificada
     gapi.client.drive.files.list({
