@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banheiro</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="script.js" defer></script>
 </head>
 
 <body>
@@ -22,9 +24,20 @@
 
     <h1>Banheiro</h1>
     <div class="container" id="banheiroContainer">
-        <!-- Imagens do banheiro serão carregadas aqui -->
+        <!-- Imagens da banheiro serão carregadas aqui -->
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        // Inicialize o cliente da API do Google Drive
+        gapi.load('client', function() {
+            gapi.client.init({
+                apiKey: 'AIzaSyB13rm0bnEiPHqVBtK8e2UmC9NvqwZioWI',
+                discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"],
+            }).then(function() {
+                // Liste os arquivos na pasta "Banheiro"
+                listFilesInFolder('1ju4JPu5m84nCG_FyLUaWkgcHkT__4aWA', 'banheiroContainer');
+            });
+        });
+    </script>
 </body>
 </html>
